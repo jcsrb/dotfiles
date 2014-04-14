@@ -14,6 +14,20 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
+# open with xdg-open  
+
+function xopen(){
+ xdg-open $1
+}
+
+# aptgrade
+
+function aptgrade(){
+    sudo apt-get update
+    sudo apt-get upgrade
+}
+
+
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
@@ -42,6 +56,13 @@ function gf() {
     /.*/ {print \$0}
 AWK
   )" | less -F
+}
+
+#git update fork when upstream is already set
+function git-update-fork(){
+ git fetch upstream
+ git checkout master
+ git rebase upstream/master
 }
 
 

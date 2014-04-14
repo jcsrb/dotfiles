@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#install common tools needed on a *ubuntu dev machine
+
+# Ask for the administrator password upfront
+sudo -v
+
+
+#make install noninteractive
+export DEBIAN_FRONTEND=noninteractive
+
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
+
+sudo apt-get update
+
+sudo apt-get -q -y install build-essential git-core htop krusader mc yakuake shutter tmux sublime-text libxml2-dev libmagick9-dev imagemagick
+
+#reset DEBIAN_FRONTEND
+export DEBIAN_FRONTEND=

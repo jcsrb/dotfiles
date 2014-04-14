@@ -1,4 +1,4 @@
-# Paul's dotfiles + a new tweaks from Jakob
+# Paul's dotfiles + a few tweaks from Jakob
 
 [mathias's readme](https://github.com/mathiasbynens/dotfiles/) is awesome. go read it.
 

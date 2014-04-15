@@ -13,7 +13,7 @@ sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
 
 sudo apt-get update
 
-sudo apt-get -q -y install build-essential git-core htop krusader mc yakuake shutter tmux sublime-text libxml2-dev libmagick9-dev imagemagick
+sudo apt-get -q -y install build-essential git-core htop krusader mc yakuake shutter tmux sublime-text python-pygments libxml2-dev imagemagick
 
 #reset DEBIAN_FRONTEND
 export DEBIAN_FRONTEND=

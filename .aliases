@@ -92,6 +92,11 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias g="git"
 alias v="vim"
 
+# Battery Info 
+# use upower -e to find the path for your batteryinfo
+alias batteryinfo='upower -i /org/freedesktop/UPower/devices/battery_BAT1| grep -E "state|time|percentage"'
+
+
 # File size
 alias fs="stat -f \"%z bytes\""
 

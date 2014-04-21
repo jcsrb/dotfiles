@@ -1,30 +1,16 @@
-# Paul's dotfiles + a few tweaks from Jakob
+# Dotfiles and Setup scripts 
+
+95% content from
+[Paul](https://github.com/paulirish/dotfiles),
+[Mathias](https://github.com/mathiasbynens/dotfiles/)
+and [Nicolas](https://github.com/bevacqua/dotfiles)
 
 [mathias's readme](https://github.com/mathiasbynens/dotfiles/) is awesome. go read it.
 
-This repo is mostly for me but you're welcome to make suggestions. Mathias's is the project to fork.  I'm mostly catching up to him, @cowboy, and @gf3.
 
 ## install the necessary apps
 
-My basic setup is captured in `install-deps.sh` which adds homebrew, z, nave, etc.
-
-## private config
-
-Toss it into a file called `.extra` which you do not commit to this repo and just keep in your `~/`
-
-I do something nice with my `PATH` there:
-
-```shell
-# PATH like a bawss
-      PATH=/opt/local/bin
-PATH=$PATH:/opt/local/sbin
-PATH=$PATH:/bin
-PATH=$PATH:~/.rvm/bin
-PATH=$PATH:~/code/git-friendly
-# ...
-
-export PATH
-```
+My basic setup is captured in `setup/ubuntu.sh`
 
 ## Syntax highlighting
 
@@ -41,19 +27,10 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
-## Similar projects
-
-I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/master/.jshintrc) and [`.editorconfig`](http://editorconfig.org/) defined for all your projects.
-
-
-
-
-
 ## overview of files
 
 ####  Automatic config
 * `.ackrc` - for ack (better than grep)
-* `.vimrc`, `.vim` - vim config, obv.
 
 #### shell environment
 * `.aliases`
@@ -62,9 +39,8 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 * `.bashrc`
 * `.exports`
 * `.functions`
-* `.extra` - not included, explained above
 
-#### manual run
+#### manual run (about to change)
 * `install-deps.sh` - random apps i need installed
 * `.osx` - run on a fresh osx machine
 * `.brew` - homebrew initialization
@@ -80,8 +56,13 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 
 ## Installation
 
+Install the config files
 ```bash
-git clone https://github.com/paulirish/dotfiles.git && cd dotfiles && ./sync.sh
+git clone https://github.com/jcsrb/dotfiles.git && cd dotfiles && ./sync.sh
 ```
 
-To update later on, just run the sync again.
+Setup ubuntu 
+```bash
+bash -c "`curl -sL https://raw.github.com/jcsrb/dotfiles/master/setup/ubuntu.sh`"
+```
+

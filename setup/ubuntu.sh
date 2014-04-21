@@ -41,19 +41,16 @@ sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) pa
 sudo apt-get update
 sudo apt-get install skype -y --force-yes
 
-
 # sublime text 3
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo apt-get update
 sudo apt-get -q -y install sublime-text-installer
 curl https://sublime.wbond.net/Package%20Control.sublime-package -o ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
 
-
 # sublimte text 2
 #sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
 #sudo apt-get update
 #sudo apt-get -q -y install sublime-text 
-
 
 #reset DEBIAN_FRONTEND
 export DEBIAN_FRONTEND=

@@ -30,8 +30,8 @@ sudo apt-get -q -y install install oracle-java8-set-default
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get update
-sudo apt-get install google-chrome-stable
-sudo apt-get install google-chrome-beta
+sudo apt-get -q -y install google-chrome-stable --force-yes
+sudo apt-get -q -y install google-chrome-beta --force-yes
 
 # GUI apps
 sudo apt-get -q -y install krusader yakuake gnome-web-photo	shutter vlc firefox browser-plugin-vlc

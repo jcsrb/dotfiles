@@ -176,6 +176,6 @@ gifify() {
 go_init() {
 	mkdir -p bin pkg src
 	export GOPATH="`pwd`"
-	export PATH="$GOPATH/bin:$PATH"
+	export PATH="$PATH:$GOPATH/bin"
 	unset GOBIN
 }

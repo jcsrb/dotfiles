@@ -19,6 +19,9 @@ sudo apt-get -q -y install git-core git-flow
 sudo chmod +x /usr/share/doc/git/contrib/subtree/git-subtree.sh
 sudo ln -s /usr/share/doc/git/contrib/subtree/git-subtree.sh /usr/lib/git-core/git-subtree
 
+# bazaar
+sudo apt-get -q -y install bzr
+
 # Java (used for all IntelliJ IDEs)
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update

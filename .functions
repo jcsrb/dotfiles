@@ -171,3 +171,11 @@ gifify() {
   fi
 }
 
+
+#initalize go project
+go_init() {
+	mkdir -p bin pkg src
+	export GOPATH="`pwd`"
+	export PATH="$GOPATH/bin:$PATH"
+	unset GOBIN
+}

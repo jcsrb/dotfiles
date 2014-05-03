@@ -37,7 +37,7 @@ sudo apt-get -q -y install google-chrome-stable --force-yes
 sudo apt-get -q -y install google-chrome-beta --force-yes
 
 # GUI apps
-sudo apt-get -q -y install krusader yakuake gnome-web-photo	shutter vlc firefox browser-plugin-vlc
+sudo apt-get -q -y install krusader yakuake gnome-web-photo	shutter vlc firefox browser-plugin-vlc trimage
 
 # skype
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"

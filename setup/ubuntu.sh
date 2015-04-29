@@ -18,6 +18,7 @@ sudo apt-get -q -y install htop mc tmux python-pygments whois unrar
 sudo apt-get -q -y install git-core git-flow
 sudo chmod +x /usr/share/doc/git/contrib/subtree/git-subtree.sh
 sudo ln -s /usr/share/doc/git/contrib/subtree/git-subtree.sh /usr/lib/git-core/git-subtree
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
 # more version controll options
 sudo apt-get -q -y install bzr mercurial

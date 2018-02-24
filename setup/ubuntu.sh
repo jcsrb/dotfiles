@@ -9,10 +9,8 @@ sudo -v
 export DEBIAN_FRONTEND=noninteractive
 
 # basics
-sudo apt-get -q -y install build-essential libssl-dev curl wget libxml2-dev imagemagick
-
-# console tools
-sudo apt-get -q -y install htop mc tmux python-pygments whois unrar
+sudo apt-get -q -y install autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev libssl-dev 
+sudo apt-get -q -y install htop mc tmux python-pygments whois
 
 # git related stuff
 sudo apt-get -q -y install git-core git-flow
@@ -20,41 +18,44 @@ sudo chmod +x /usr/share/doc/git/contrib/subtree/git-subtree.sh
 sudo ln -s /usr/share/doc/git/contrib/subtree/git-subtree.sh /usr/lib/git-core/git-subtree
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
-# more version controll options
-sudo apt-get -q -y install bzr mercurial
-
-# Java (used for all IntelliJ IDEs)
-sudo add-apt-repository -y ppa:webupd8team/java
+# editor
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-sudo apt-get -q -y install oracle-java8-installer
-sudo apt-get -q -y install install oracle-java8-set-default
+sudo apt-get -q -y install code 
 
 # chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 sudo apt-get update
-sudo apt-get -q -y install google-chrome-stable --force-yes
-sudo apt-get -q -y install google-chrome-beta --force-yes
+sudo apt-get -q -y install google-chrome-stable 
+
+# docker
+sudo apt-get update
+sudo apt-get install docker-ce
+sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Ruby Stuff
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.5
+rbenv global 2.5
+
+# Node Stuff
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+nvm install node
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get install --no-install-recommends yarn
 
 # GUI apps
-sudo apt-get -q -y install krusader yakuake gnome-web-photo	shutter vlc firefox browser-plugin-vlc trimage
+sudo apt-get -q -y install krusader yakuake firefox trimage
 
-# skype
-sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-sudo apt-get update
-sudo apt-get install skype -y --force-yes
-
-# sublime text 3
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-sudo apt-get update
-sudo apt-get -q -y install sublime-text-installer
-curl https://sublime.wbond.net/Package%20Control.sublime-package -o ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
-
-# sublimte text 2
-#sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
-#sudo apt-get update
-#sudo apt-get -q -y install sublime-text 
 
 #reset DEBIAN_FRONTEND
 export DEBIAN_FRONTEND=

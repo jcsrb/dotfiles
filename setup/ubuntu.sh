@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# lots of stuff broken, do not use
+
 # install common tools needed on a *buntu dev machine
 
 # Ask for the administrator password upfront

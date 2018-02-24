@@ -43,8 +43,8 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-rbenv install 2.5
-rbenv global 2.5
+rbenv install 2.5.0
+rbenv global 2.5.0
 
 # Node Stuff
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash

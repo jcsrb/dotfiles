@@ -21,11 +21,6 @@ and [Nicolas](https://github.com/bevacqua/dotfiles)
 * `.exports`
 * `.functions`
 
-#### manual run (about to change)
-* `install-deps.sh` - random apps i need installed
-* `.osx` - run on a fresh osx machine
-* `.brew` - homebrew initialization
-
 #### git, brah
 * `.git`
 * `.gitattributes`

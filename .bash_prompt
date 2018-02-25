@@ -62,9 +62,8 @@ function ruby_info(){
 }
 
 # Ruby and Gem only then different from default
-function node_info(){
-	echo "$GREENa"
-	# echo "$GREEN[`nvm current | cut -c 2-`]"
+function node_info(){	
+	echo "$GREEN[`nvm current | cut -c 2-`]"
 }
 
 # iTerm Tab and Title Customization and prompt customization

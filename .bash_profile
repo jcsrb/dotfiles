@@ -1,3 +1,6 @@
+# init nvm
+[[ -s "$HOME/.nvm" ]] && . "$HOME/.nvm/nvm.sh"
+
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
@@ -12,8 +15,6 @@ fi
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
-# init nvm
-[[ -s "$HOME/.nvm" ]] && . "$HOME/.nvm/nvm.sh"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

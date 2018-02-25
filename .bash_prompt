@@ -57,8 +57,14 @@ function usernamehost() {
 }
 
 # Ruby and Gem only then different from default
-function rvm_info(){
-	if [ "$(rvm default do rvm-prompt)" != "$(rvm-prompt)" ];	then echo "$WHITE[$(rvm-prompt v g)] "; fi
+function ruby_info(){
+	echo "$WHITE[`rbenv version-name`]"
+}
+
+# Ruby and Gem only then different from default
+function node_info(){
+	echo "$GREENa"
+	# echo "$GREEN[`nvm current | cut -c 2-`]"
 }
 
 # iTerm Tab and Title Customization and prompt customization
@@ -72,4 +78,4 @@ function rvm_info(){
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(rvm_info)${WHITE}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(ruby_info)$(node_info)${WHITE}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"

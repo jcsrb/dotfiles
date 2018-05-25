@@ -14,7 +14,8 @@ fi
 
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
-
+# add fzf config https://github.com/junegunn/fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

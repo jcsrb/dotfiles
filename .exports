@@ -16,3 +16,6 @@ export HISTTIMEFORMAT
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+# save the history of iex
+export ERL_AFLAGS="-kernel shell_history enabled"
